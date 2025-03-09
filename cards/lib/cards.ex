@@ -84,4 +84,21 @@ defmodule Cards do
     end
 
   end
+
+  @doc """
+  Function which creates the deck, shuffles, and deals it.
+  Using Pipe operator |>
+  """
+  def create_hand(hand_size) do
+    # deck = Cards.create_deck()
+    # deck = Cards.shuffle(deck)
+    # hand = Cards.deal(deck, hand_size)
+
+    # Using Pipe operator |> requires consistent first argument.
+    Cards.create_deck()
+    |> Cards.shuffle()
+    |> Cards.deal(hand_size)
+
+  end
+
 end
