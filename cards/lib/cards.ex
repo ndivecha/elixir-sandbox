@@ -1,16 +1,21 @@
 defmodule Cards do
   @moduledoc """
   Documentation for `Cards`.
+  Provides methods for creating and handling a deck of cards.
   """
 
   @doc """
   Hello world.
+  This is how we start learning Elixir.
 
   """
   def hello do
     "Hello world! hi there!"
   end
 
+  @doc """
+  Function to create deck of cards.
+  """
   def create_deck do
     values = ["Ace", "Two", "Three", "Four", "Five",
     "Six", "Seven", "Eight", "Nine", "Ten",
