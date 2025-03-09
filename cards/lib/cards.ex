@@ -57,4 +57,29 @@ defmodule Cards do
   def deal(deck, hand_size) do
     Enum.split(deck, hand_size)
   end
+
+
+  @doc """
+  To save the deck of cards to file
+  Here we use erlang by passing the deck and filename to store binary object.
+  deck = Cards.create_deck()
+  Cards.save(deck, "my_deck")
+  """
+  def save(deck, filename) do
+    binary = :erlang.term_to_binary(deck)
+    File.write(filename, binary)
+  end
+
+  @doc """
+  To open the file
+  """
+  def load(filename) do
+    {status, binary} = File.read(filename)
+
+    case status do
+      :ok -> :erlang.binary_to_term(binary)
+      :error -> "File not found!"
+    end
+
+  end
 end
